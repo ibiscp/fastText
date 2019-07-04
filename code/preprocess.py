@@ -10,7 +10,7 @@ from gensim.models import FastText
 def parse_args():
     parser = ArgumentParser()
     parser.add_argument("resource_folder", nargs='?', default='../resources/', help="Resource folder path")
-    parser.add_argument("dictionary_name", nargs='?', default='precision', help="Name of the dictionary file to use")
+    parser.add_argument("dictionary_name", nargs='?', default='sentences', help="Name of the dictionary file to use")
     parser.add_argument("mapping_name", nargs='?', default='mapping', help="Name of the mapping file to use")
 
     return parser.parse_args()
@@ -25,7 +25,7 @@ def load(name):
     with open(name + '.pkl', 'rb') as f:
         return pickle.load(f)
 
-def extract_sentences(file_name='precision'):
+def extract_sentences(file_name='sentences'):
 
     # Get an iterable
     file = '../resources/dataset/eurosense.v1.0.high-' + file_name + '.xml'

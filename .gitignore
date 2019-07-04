@@ -1,0 +1,6 @@
+.DS_Store
+.git
+.idea/
+__pycache__
+
+resources/dataset
