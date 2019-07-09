@@ -4,7 +4,7 @@ import glob
 import re
 from argparse import ArgumentParser
 import numpy as np
-import fastText
+# import fastText
 
 def parse_args():
     parser = ArgumentParser()
@@ -71,12 +71,12 @@ def load_data(file_name, path="../resources/"):
         print(i)
 
     # Show the ngrams of certain words
-    print('\nN-grams of a few words')
-    ids = np.random.randint(0,len(sentences), size=10)
-    for id in ids:
-        pos = np.random.randint(0, len(sentences[id]))
-        ngrams = fastText.word2ngrams(sentences[id][pos])
-        print(sentences[id][pos] + ':', ' '.join(ngrams))
+    # print('\nN-grams of a few words')
+    # ids = np.random.randint(0,len(sentences), size=10)
+    # for id in ids:
+    #     pos = np.random.randint(0, len(sentences[id]))
+    #     ngrams = fastText.word2ngrams(sentences[id][pos])
+    #     print(sentences[id][pos] + ':', ' '.join(ngrams))
 
     return sentences
 

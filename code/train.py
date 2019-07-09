@@ -15,13 +15,13 @@ if __name__ == '__main__':
     sentences = load_data(file_name=args.file_name)
 
     # Define the grid search parameters
-    epochs = [20]
-    negative = [5, 10]
-    window = [3, 5, 7]
-    embedding_size = [300]
+    epochs = [30]
+    negative = [5]
+    window = [7, 9]
+    embedding_size = [300, 500]
     min_count = [5]
-    min_n = [2, 3]
-    max_n = [5, 6]
+    min_n = [3]
+    max_n = [6]
     param_grid = dict(epochs=epochs,
                       negative=negative,
                       window=window,
