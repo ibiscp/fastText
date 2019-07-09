@@ -1,3 +1,27 @@
-Best -> Correlation: 0.15420615408439875 using {'embedding_size': 100, 'epochs': 1, 'max_n': 5, 'min_count': 5, 'min_n': 2, 'negative': 5, 'window': 3}
+Best -> Correlation: 0.30830318221786024 using {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 3, 'negative': 5, 'window': 7}
 
 # Training 1
+Correlation: 0.257336 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 2, 'negative': 5, 'window': 3}
+Correlation: 0.280367 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 2, 'negative': 5, 'window': 5}
+Correlation: 0.292673 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 2, 'negative': 5, 'window': 7}
+Correlation: 0.252319 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 2, 'negative': 10, 'window': 3}
+Correlation: 0.269146 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 2, 'negative': 10, 'window': 5}
+Correlation: 0.282320 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 2, 'negative': 10, 'window': 7}
+Correlation: 0.271176 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 3, 'negative': 5, 'window': 3}
+Correlation: 0.291850 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 3, 'negative': 5, 'window': 5}
+Correlation: 0.293250 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 3, 'negative': 5, 'window': 7}
+Correlation: 0.261210 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 3, 'negative': 10, 'window': 3}
+Correlation: 0.300445 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 3, 'negative': 10, 'window': 5}
+Correlation: 0.304186 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 5, 'min_count': 5, 'min_n': 3, 'negative': 10, 'window': 7}
+Correlation: 0.260977 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 2, 'negative': 5, 'window': 3}
+Correlation: 0.281140 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 2, 'negative': 5, 'window': 5}
+Correlation: 0.301154 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 2, 'negative': 5, 'window': 7}
+Correlation: 0.264717 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 2, 'negative': 10, 'window': 3}
+Correlation: 0.284865 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 2, 'negative': 10, 'window': 5}
+Correlation: 0.293014 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 2, 'negative': 10, 'window': 7}
+Correlation: 0.272104 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 3, 'negative': 5, 'window': 3}
+Correlation: 0.286098 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 3, 'negative': 5, 'window': 5}
+Correlation: 0.308303 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 3, 'negative': 5, 'window': 7}
+Correlation: 0.268816 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 3, 'negative': 10, 'window': 3}
+Correlation: 0.296501 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 3, 'negative': 10, 'window': 5}
+Correlation: 0.306349 - Parameters: {'embedding_size': 300, 'epochs': 20, 'max_n': 6, 'min_count': 5, 'min_n': 3, 'negative': 10, 'window': 7}
