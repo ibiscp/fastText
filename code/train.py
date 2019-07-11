@@ -15,10 +15,10 @@ if __name__ == '__main__':
     sentences = load_data(file_name=args.file_name)
 
     # Define the grid search parameters
-    epochs = [30]
+    epochs = [50]
     negative = [5]
     window = [7, 9]
-    embedding_size = [300, 500]
+    embedding_size = [300]
     min_count = [5]
     min_n = [3]
     max_n = [6]

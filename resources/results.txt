@@ -31,3 +31,5 @@ Correlation: 0.339179 - Parameters: {'embedding_size': 300, 'epochs': 30, 'max_n
 Correlation: 0.341525 - Parameters: {'embedding_size': 300, 'epochs': 30, 'max_n': 6, 'min_count': 5, 'min_n': 3, 'negative': 5, 'window': 9}
 Correlation: 0.316732 - Parameters: {'embedding_size': 500, 'epochs': 30, 'max_n': 6, 'min_count': 5, 'min_n': 3, 'negative': 5, 'window': 7}
 Correlation: 0.339169 - Parameters: {'embedding_size': 500, 'epochs': 30, 'max_n': 6, 'min_count': 5, 'min_n': 3, 'negative': 5, 'window': 9}
+
+# Training 3
