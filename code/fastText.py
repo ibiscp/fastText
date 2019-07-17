@@ -78,61 +78,57 @@ class FastText():
             raw_word_count += raw_word_count_epoch
             job_tally += job_tally_epoch
 
+    # Get word representation
+    def word_vec(self, word):
+        if word in self.vocab:
+            return super(FastTextKeyedVectors, self).word_vec(word, use_norm)
+        else:
+            word_vec = np.zeros(self.vectors_ngrams.shape[1], dtype=np.float32)
+            ngram_hashes = ngram_hashes(word, self.min_n, self.max_n, self.bucket)
+
+            for nh in ngram_hashes:
+                word_vec += self.vectors_ngrams[nh]
+            return word_vec / len(ngram_hashes)
+
+    # Return the ngrams for the given word
+    def compute_ngrams(self, word, min_n, max_n):
+        word = '<' + word + '>'
+        ngrams = []
+
+        for n in range(min_n, min(max_n, len(word)) + 1):
+            for pos in range(0, len(word)-n+1):
+                ngram = word[pos:pos+n]
+                ngrams.append(ngram)
+
+        return ngrams
+
+    # Compute word hash
+    def compute_hash(self, string):
+        # Supress warning
+        old_settings = np.seterr(all='ignore')
+        h = np.uint32(2166136261)
+        for c in string:
+            h = h ^ np.uint32(ord(c))
+            h = h * np.uint32(16777619)
+        np.seterr(**old_settings)
+        return h
+
+    # Compute ngrams hash
+    def ngram_hashes(self, word, min_n, max_n, num_buckets):
+        text_ngrams = self.compute_ngrams(word, min_n, max_n)
+        hashes = [self.compute_hash(n) % num_buckets for n in text_ngrams]
+
+        return text_ngrams, hashes
 
 
 
-        # Get word representation
-        # def word_vec(self, word):
-        #     if word in self.vocab:
-        #         return super(FastTextKeyedVectors, self).word_vec(word, use_norm)
-        #     elif self.bucket == 0:
-        #         raise KeyError('cannot calculate vector for OOV word without ngrams')
-        #     else:
-        #         word_vec = np.zeros(self.vectors_ngrams.shape[1], dtype=np.float32)
-        #         ngram_hashes = ngram_hashes(word, self.min_n, self.max_n, self.bucket)
-        #
-        #         for nh in ngram_hashes:
-        #             word_vec += self.vectors_ngrams[nh]
-        #         return word_vec / len(ngram_hashes)
+# print(ngram_hashes('believe', min_n=3, max_n=3, num_buckets=2000000))
+#
+#
+# # sentences = load_data('precision')
+# # model = FastText()
+# # model.build_vocab(sentences)
+# #
+# # # dct = Dictionary(sentences)
+# # ibis = 1
 
-# Return the ngrams for the given word
-def compute_ngrams(word, min_n, max_n):
-    word = '<' + word + '>'
-    ngrams = []
-
-    for n in range(min_n, min(max_n, len(word)) + 1):
-        for pos in range(0, len(word)-n+1):
-            ngram = word[pos:pos+n]
-            ngrams.append(ngram)
-
-    return ngrams
-
-# Compute word hash
-def compute_hash(string):
-    # Supress warning
-    old_settings = np.seterr(all='ignore')
-    h = np.uint32(2166136261)
-    for c in string:
-        h = h ^ np.uint32(ord(c))
-        h = h * np.uint32(16777619)
-    np.seterr(**old_settings)
-    return h
-
-# Compute ngrams hash
-def ngram_hashes(word, min_n, max_n, num_buckets):
-    text_ngrams = compute_ngrams(word, min_n, max_n)
-    hashes = [compute_hash(n) % num_buckets for n in text_ngrams]
-
-    return text_ngrams, hashes
-
-
-
-# print(ngram_hashes('ibis', min_n=3, max_n=6, num_buckets=2000000))
-
-
-sentences = load_data('precision')
-model = FastText()
-model.build_vocab(sentences)
-
-# dct = Dictionary(sentences)
-ibis = 1

@@ -21,7 +21,8 @@ def plot_pca(resource_folder, filtered_vec_name, topnumber):
     vocab = model.wv.vocab
 
     # Get top n
-    top = {k: vocab[k] for k in list(vocab)[:topnumber]}
+    # top = {k: vocab[k] for k in list(vocab)[:topnumber]} , 'eu', 'mr', 'say', 'law', 'way'
+    top = ['parliament', 'country', 'union', 'states', 'europe', 'president', 'policy', 'people', 'time', 'commission', 'year', 'right', 'group', 'market', 'council', 'state', 'proposal', 'area', 'european', 'community', 'debate', 'government', 'committee', 'report', 'president', 'case', 'problem', 'world', 'measure', 'energy', 'process', 'service', 'cooperation', 'work', 'action']
 
     # Plot PCA
     X = model[top]
